@@ -67,9 +67,19 @@ function dosis_shortcode($atts = []) {
 	return '<iframe border="0" class="shortcode_iframe" src="' . $atts['src'] . '" width="' . $atts['width'] . '" height="' . $atts['height'] . '"></iframe>';
 }
 	
+function dosis_collapse_shortcode($atts = []) { 
+	return '<p>  
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-sm">Calcular dósis</button>
 
-// register shortcode
+    </p>
+    <div class="collapse" id="collapseExample">
+        '.dosis_shortcode($atts).'
+    </div>';
+} 
+
+// register shortcodes
 add_shortcode('dosis', 'dosis_shortcode');
+add_shortcode('dosis_btn', 'dosis_collapse_shortcode');
 
 
 

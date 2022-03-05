@@ -4,15 +4,17 @@ DOCUMENTACIÓN
 
 Descripción:
 
-El plugin provee un shortcode para cargar en un iframe una aplicación.
+El plugin provee de un par de shortcodes para cargar en un iframe una aplicación:
+
+    [dosis] 
+y
+    [dosis_btn]
 
 Uso:
 
-Solo incruste el shortcode [dosis] en la página, widget o donde sea que lo necesite.
+Solo incruste el shortcode [dosis] o [dosis_btn] en la página, widget o donde sea que lo necesite.
 
-Quizás sea buena idea agregar el shortcode dentro de un componente "collapse" de Bootstrap.
-
-Ej:
+El shortcode [dosis_btn] incluye un componente "collapse" de Bootstrap sobre [dosis] y equivale a:
 
     <p>  
     <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-sm">Calcular dósis</button>
@@ -22,11 +24,22 @@ Ej:
         [dosis]
     </div>
 
-El tag [dosis] es parametrizable con width, height y src
+De todas formas como el collapse fue encapsulado dentro de un segundo shortcode [dosis_btn] no es necesario nada de todo eso.
+
+Tanto los tag [dosis] como [dosis_btn] son parametrizables con width, height y src
 
 Ej:
 
     [dosis height="1000px"]
+
+
+Importante:
+
+Dentro del plugin hay un archivo config.php donde debe configurarse a donde apuntar con el IFRAME:
+
+    <?php
+
+    $nanko_dosis_url = 'http://test.lan/Clientes/dosis';
 
 
 # CodeIgniter 4
