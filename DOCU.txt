@@ -1,0 +1,36 @@
+DOCUMENTACIÓN
+
+@author: Pablo Bozzolo
+
+Descripción:
+
+El plugin provee un shortcode para cargar en un iframe una aplicación.
+
+Uso:
+
+Solo incruste el shortcode [dosis] en la página, widget o donde sea que lo necesite.
+
+Quizás sea buena idea agregar el shortcode dentro de un componente "collapse" de Bootstrap.
+
+Ej:
+
+    <p>  
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-sm">Calcular dósis</button>
+
+    </p>
+    <div class="collapse" id="collapseExample">
+        [dosis]
+    </div>
+
+El tag [dosis] es parametrizable con width, height y src
+
+Ej:
+
+    [dosis height="1000px"]
+
+
+# CodeIgniter 4
+
+Del lado de la APP en CodeIgniter 4, es necesario cambiar el header "X-Frame-Options" permitiendo que el subdominio donde se halle WordPress pueda acceder al iframe.
+
+    app/Controllers/Clientes.php

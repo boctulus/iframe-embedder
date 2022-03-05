@@ -1,0 +1,12 @@
+{
+  "name": "boctulus/namko",
+  "description": "connector",
+  "require": {
+    "php": ">=7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "boctulus\\": "/"
+    }
+  }
+}
